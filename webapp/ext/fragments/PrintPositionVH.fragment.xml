@@ -1,0 +1,46 @@
+<core:FragmentDefinition
+    xmlns="sap.ui.comp.valuehelpdialog"
+    xmlns:m="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core">
+    <ValueHelpDialog
+        id="PPVHD"
+        title="{= ${/currentField} ? 'Select Print Position for ' + ${/currentField} : 'Select Print Position'}"
+        ok=".onPPVHDOk"
+        cancel=".onPPVHDCancel"
+        afterClose=".onPPVHDAfterClose"
+        supportRanges="false"
+        key="POItemName"
+        descriptionKey="Text">
+        <filterBar>
+            <fb:FilterBar
+                id="ppvhdFB"
+                advancedMode="true"
+                search=".onPPVHDSearch"
+                isRunningInValueHelpDialog="true">
+                <fb:filterGroupItems>
+                    <fb:FilterGroupItem
+                        id="fgiPOItemName"
+                        groupName="__$INTERNAL$"
+                        name="POItemName"
+                        label="POItemName"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <m:Input id="inpF_POItemName" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem
+                        id="fgiText"
+                        groupName="__$INTERNAL$"
+                        name="Text"
+                        label="Text"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <m:Input id="inpF_Text" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                </fb:filterGroupItems>
+            </fb:FilterBar>
+        </filterBar>
+    </ValueHelpDialog>
+</core:FragmentDefinition> 

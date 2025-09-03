@@ -1,0 +1,57 @@
+
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+
+    <Dialog
+        id="SVFDialog"
+        title="SVFの出力"
+        class="sapUiSizeCompact"
+        contentWidth="500px">
+
+        <content>
+            <form:SimpleForm
+                id="SVFForm"
+                editable="true"
+                layout="ResponsiveGridLayout">
+
+                <Label id="lblPrinterName" text="PrinterName" required="true"/>
+                <Input id="inpPrinterName" value="{svf>/PrinterName}" />
+
+                <Label id="lblFormName" text="FormName" required="true"/>
+                <Input id="inpFormName" value="{svf>/FormName}" />
+
+                <Label id="lblSignerName" text="SignerName"/>
+                <Input id="inpSignerName" value="{svf>/SignerName}" />
+
+                <Label id="lblPONotes" text="PONotes"/>
+                <Input id="inpPONotes" value="{svf>/PONotes}" />
+
+                <Label id="lblPONo" text="PONo"/>
+                <Input id="inpPONo" value="{svf>/PONo}" />
+
+                <Label id="lblPrintPosition1" text="PrintPosition1" required="true"/>
+                <Input id="inpPrintPosition1" value="{svf>/PrintPosition1}" 
+                       showValueHelp="true" valueHelpRequest=".onPrintPositionVH"  maxLength="1" />
+
+                <Label id="lblPrintPosition2" text="PrintPosition2" required="true"/>
+                <Input id="inpPrintPosition2" value="{svf>/PrintPosition2}" 
+                       showValueHelp="true" valueHelpRequest=".onPrintPositionVH"  maxLength="1"/>
+
+                <Label id="lblPrintPosition3" text="PrintPosition3" required="true"/>
+                <Input id="inpPrintPosition3" value="{svf>/PrintPosition3}" 
+                       showValueHelp="true" valueHelpRequest=".onPrintPositionVH"  maxLength="1"/>
+
+                <Label id="lblPopUpInfoText" text="PopUpInfoText"/>
+                <Input id="inpPopUpInfoText" value="{svf>/PopUpInfoText}" />
+
+            </form:SimpleForm>
+        </content>
+
+        <buttons>
+            <Button id="btnSVFConfirm" text="SVFの出力" type="Emphasized" press=".onSVFConfirm"/>
+            <Button id="btnSVFCancel" text="Cancel" press=".onSVFCancel"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
